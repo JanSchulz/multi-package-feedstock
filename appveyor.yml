@@ -16,7 +16,7 @@ environment:
   CONDA_PY: "27"
   # The secure variable. This is defined canonically in conda-forge.yml.
   BINSTAR_TOKEN:
-    secure: "<will be updated by "conda-smithy register-feedstock-ci">"
+    secure: "pQrnOvQFfuz1l38ZtSzpX9LHQU4y7cmbZo4kTgTnO3aFE5wwixmdmBjMKdqRx9uA"
   matrix:
     # conda buildall will automatically build for the right python/numpy version
     - TARGET_ARCH: "x86"
@@ -39,7 +39,7 @@ install:
     - cmd: conda install -n root --quiet -c conda-forge --yes conda-build-all conda-build anaconda-client jinja2 setuptools
 
 
-    - cmd: conda config --add channels owner, e.g. "conda-forge"
+    - cmd: conda config --add channels janschulz
 
 
 
@@ -48,6 +48,6 @@ build: off
 
 test_script:
     - conda buildall .\recipes --no-inspect-conda-bld-directory
-       --upload-channels "<owner, e.g. "conda-forge">/channel/<channel, e.g. "main">"
-       --inspect-channels "<owner, e.g. "conda-forge">/channel/<channel, e.g. "main">"
+       --upload-channels "janschulz/channel/dev"
+       --inspect-channels "janschulz/channel/dev"
 

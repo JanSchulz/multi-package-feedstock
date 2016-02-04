@@ -11,20 +11,20 @@ Working with this channel
 Listing all packages form the conda-forge channel can be achieved by
 
 ```
-conda search -c owner, e.g. "conda-forge" --override-channels
+conda search -c janschulz --override-channels
 ```
 
 Installing a package can be done with:
 
 ```
-conda install -c owner, e.g. "conda-forge" <package-name>
+conda install -c janschulz <package-name>
 ```
 
 
 You can permanently add the channel by using the following command:
 
 ```
-conda config --add channels owner, e.g. "conda-forge"
+conda config --add channels janschulz
 ```
 
 Once the conda-forge channel has been enabled, packages can be installed with:
@@ -57,5 +57,5 @@ If you would like to improve the individual recipes, please take the normal
 route of forking this repository and submitting a PR. Upon submission, your changes will
 be run on the appropriate platforms to give the reviewer an opportunity to confirm that the
 changes result in a successful build. Once merged, the recipe will be re-built and built packages
-uploaded automatically to the owner, e.g. "conda-forge" channel, whereupon they will be available for
+uploaded automatically to the janschulz channel, whereupon they will be available for
 everybody to install and use.

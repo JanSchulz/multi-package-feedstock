@@ -11,7 +11,7 @@ config=$(cat <<CONDARC
 
 channels:
 
- - owner, e.g. "conda-forge"
+ - janschulz
 
  - defaults
 
@@ -44,7 +44,7 @@ conda info
 conda install -n root --quiet -c conda-forge --yes conda-build-all conda-build anaconda-client jinja2 setuptools
 
 conda buildall /recipe_root --no-inspect-conda-bld-directory \
-   --upload-channels "<owner, e.g. "conda-forge">/channel/<channel, e.g. "main">"\
-   --inspect-channels "<owner, e.g. "conda-forge">/channel/<channel, e.g. "main">"
+   --upload-channels "janschulz/channel/dev"\
+   --inspect-channels "janschulz/channel/dev"
 
 EOF
