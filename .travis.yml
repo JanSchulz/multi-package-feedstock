@@ -1,0 +1,28 @@
+# This file was generated automatically from conda-smithy. To update this configuration,
+# update the conda-forge.yaml and/or the recipe/meta.yaml.
+
+language: objective-c
+
+env:
+  global:
+    # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
+    - secure: "<will be updated by "conda-smithy register-feedstock-ci">"
+
+install:
+    - |
+      MINICONDA_URL="http://repo.continuum.io/miniconda"
+      MINICONDA_FILE="Miniconda3-3.7.3-MacOSX-x86_64.sh"
+      wget "${MINICONDA_URL}/${MINICONDA_FILE}"
+      bash $MINICONDA_FILE -b
+
+      export PATH=/Users/travis/miniconda3/bin:$PATH
+
+      conda install -n root --quiet -c conda-forge --yes conda-build-all conda-build jinja2 anaconda-client setuptools
+
+      
+      conda config --add channels owner, e.g. "conda-forge"
+      
+
+
+script:
+  - conda buildall ./recipes --no-inspect-conda-bld-directory   --upload-channels "<owner, e.g. "conda-forge">/channel/<channel, e.g. "main">" --inspect-channels "<owner, e.g. "conda-forge">/channel/<channel, e.g. "main">"
