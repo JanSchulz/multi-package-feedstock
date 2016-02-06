@@ -10,14 +10,10 @@ Included packages
 example-package
 ---------------
 
-Home: http://example.com
-
-Package license: BSD-3
-
-Feedstock license: BSD
-
-Summary: An example package which does not contain anything
-
+* Home: http://example.com
+* Package license: BSD-3
+* Feedstock license: BSD
+* Summary: An example package which does not contain anything
 
 
 
