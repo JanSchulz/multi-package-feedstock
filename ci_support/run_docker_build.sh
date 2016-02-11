@@ -40,11 +40,8 @@ conda clean --lock
 
 conda info
 
-
 conda install -n root --quiet -c conda-forge --yes conda-build-all conda-build anaconda-client jinja2 setuptools
 
-conda buildall /recipe_root --no-inspect-conda-bld-directory \
-   --upload-channels "janschulz/channel/dev"\
-   --inspect-channels "janschulz/channel/dev"
+conda buildall /recipe_root --no-inspect-conda-bld-directory  --matrix-conditions  "python >=2.7"     --upload-channels "janschulz/channel/dev" --inspect-channels "janschulz/channel/dev"
 
 EOF

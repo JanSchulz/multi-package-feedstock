@@ -15,15 +15,15 @@ install:
       wget "${MINICONDA_URL}/${MINICONDA_FILE}"
       bash $MINICONDA_FILE -b
 
-      export PATH=/Users/travis/miniconda3/bin:$PATH
-
-      conda install -n root --quiet -c conda-forge --yes conda-build-all conda-build jinja2 anaconda-client setuptools
+    - export PATH=/Users/travis/miniconda3/bin:$PATH
+    - conda update --yes conda
+    - conda install -n root --quiet -c conda-forge --yes conda-build-all conda-build jinja2 anaconda-client setuptools
 
       
-      conda config --add channels janschulz
+    - conda config --add channels janschulz
       
-      conda info
+    - conda info
 
 
 script:
-  - conda buildall ./recipes --no-inspect-conda-bld-directory   --upload-channels "janschulz/channel/dev" --inspect-channels "janschulz/channel/dev"
+  - conda buildall ./recipes --no-inspect-conda-bld-directory   --matrix-conditions  "python >=2.7" --upload-channels "janschulz/channel/dev" --inspect-channels "janschulz/channel/dev"

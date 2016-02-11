@@ -17,6 +17,16 @@ example-package
 
 
 
+python
+------
+
+* Home: http://www.python.org/
+* Package license: PSF
+* Feedstock license: BSD
+* Summary: general purpose programming language
+
+
+
 
 Working with the "janschulz" conda channel
 ==========================================
@@ -50,10 +60,10 @@ conda install <package-name>
 Terminology
 ===========
 
-**feedstock** - a repository with one or more conda recipe (raw material), supporting scripts and
+**feedstock** - a repository with one or more conda recipes (raw material), supporting scripts and
                 CI configuration
 
-**conda-smithy** - the tool which helps orchestrate the feedstock or a pile.
+**conda-smithy** - the tool which helps orchestrate the feedstock.
                    Its primary use is in the construction of the CI ``.yml`` files
                    and simplify the management of *many* feedstocks.
 
@@ -99,8 +109,8 @@ the package) and the necessary configurations for automatic building using freel
 available continuous integration services. Thanks to the awesome service provided by
 [CircleCI](https://circleci.com/), [AppVeyor](http://www.appveyor.com/)
 and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](http://docs.anaconda.org/) or your own channel for Linux, Windows and OSX
+packages to the [conda-forge](https://anaconda.org/conda-forge) or your own channel at the
+[Anaconda-Cloud](http://docs.anaconda.org/) for Linux, Windows and OSX
 respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
