@@ -24,6 +24,7 @@ if [ `uname` == Darwin ]; then
         cp $RECIPE_DIR/setup_osx.py .
         $PYTHON setup_osx.py build
         ls build/*
+        mkdir -p $DYNLOAD_DIR
         cp build/lib.macosx-*/_hashlib.so $DYNLOAD_DIR
         cp build/lib.macosx-*/_ssl.so $DYNLOAD_DIR
         cp build/lib.macosx-*/_tkinter.so $DYNLOAD_DIR
