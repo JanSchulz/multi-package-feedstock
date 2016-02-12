@@ -6,7 +6,7 @@ if "%ARCH%"=="64" (
     set DMSW=
 )
 
-%REPLACE% "@DMSW@" "%DMSW%" Lib\distutils\cygwinccompiler.py
+sed -i.bak  "s/@DMSW@/%DMSW%/" Lib\distutils\cygwinccompiler.py
 if errorlevel 1 exit 1
 
 REM ========== actual compile step

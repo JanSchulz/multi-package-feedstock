@@ -5,7 +5,7 @@ rm -rf Lib/test Lib/*/test
 if [ `uname` == Darwin ]; then
     export CFLAGS="-I$PREFIX/include $CFLAGS"
     export LDFLAGS="-L$PREFIX/lib $LDFLAGS"
-    sed -i "s/@OSX_ARCH@/'$OSX_ARCH'/" Lib/distutils/unixccompiler.py
+    sed -i.bak "s/@OSX_ARCH@/'$OSX_ARCH'/" Lib/distutils/unixccompiler.py
 fi
 
 ./configure --enable-shared --enable-ipv6 --enable-unicode=ucs4 \
