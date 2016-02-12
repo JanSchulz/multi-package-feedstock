@@ -2,7 +2,8 @@
 call "%localappdata%\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat" x86
 set INCLUDE=%LIBRARY_INC%;%INCLUDE%
 set LIB=%LIBRARY_LIB%;%LIB%
-
+:: for vcbuild
+set PATH=%PATH%;%localappdata%\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin\amd64\
 echo %PATH%
 echo %INCLUDE%
 echo %LIB%
