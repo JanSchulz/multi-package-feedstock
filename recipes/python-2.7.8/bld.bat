@@ -1,5 +1,5 @@
 :: Set the right compiler
-"%localappdata%\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat" x86
+call "%localappdata%\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat" x86
 set INCLUDE=%LIBRARY_INC%;%INCLUDE%
 set LIB=%LIBRARY_LIB%;%LIB%
 
