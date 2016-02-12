@@ -16,6 +16,9 @@ source:
 build:
   no_link: bin/python
 
+  features:
+    - vc9  [win]
+
 requirements:
   build:
     - bzip2      [unix]
