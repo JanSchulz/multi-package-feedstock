@@ -1,3 +1,11 @@
+:: Set the right compiler
+"%localappdata%\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat" x86
+set INCLUDE=%LIBRARY_INC%;%INCLUDE%
+set LIB=%LIBRARY_LIB%;%LIB%
+
+echo %PATH%
+echo %INCLUDE%
+echo %LIB%
 REM ========== prepare source
 
 if "%ARCH%"=="64" (
