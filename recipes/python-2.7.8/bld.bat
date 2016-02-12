@@ -1,5 +1,6 @@
 :: Set the right compiler
 call "%localappdata%\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat" x86
+echo on
 set INCLUDE=%LIBRARY_INC%;%INCLUDE%
 set LIB=%LIBRARY_LIB%;%LIB%
 :: for vcbuild
@@ -11,8 +12,10 @@ REM ========== prepare source
 
 if "%ARCH%"=="64" (
     set DMSW=-DMS_WIN64
+    set RELEASE_TARGET="Release|x64"
 ) else (
     set DMSW=
+    set RELEASE_TARGET="Release|Win32"
 )
 
 sed -i.bak  "s/@DMSW@/%DMSW%/" Lib\distutils\cygwinccompiler.py
@@ -20,7 +23,7 @@ if errorlevel 1 exit 1
 
 REM ========== actual compile step
 
-vcbuild PCbuild\pcbuild.sln "%RELEASE_TARGET%"
+vcbuild PCbuild\pcbuild.sln %RELEASE_TARGET%
 
 if "%ARCH%"=="64" (
     copy PCbuild\amd64\* PCbuild\
