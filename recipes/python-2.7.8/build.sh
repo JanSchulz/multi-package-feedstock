@@ -15,20 +15,19 @@ make install
 
 if [ `uname` == Darwin ]; then
     DYNLOAD_DIR=$STDLIB_DIR/lib-dynload
+    # Hack, the above points to python2.7.8
+    DYNLOAD_DIR=$PREFIX/lib/python2.7/lib-dynload
     if [ $ARCH == 64 ]; then
-        rm -f $DYNLOAD_DIR/_hashlib_failed.so
-        rm -f $DYNLOAD_DIR/_ssl_failed.so
-        rm -f $DYNLOAD_DIR/_tkinter_failed.so
+        rm  $DYNLOAD_DIR/_hashlib_failed.so
+        rm  $DYNLOAD_DIR/_ssl_failed.so
+        rm  $DYNLOAD_DIR/_tkinter_failed.so
         pushd Modules
         rm -rf build
         cp $RECIPE_DIR/setup_osx.py .
         $PYTHON setup_osx.py build
-        ls build/*
-        mkdir -p $DYNLOAD_DIR
         cp build/lib.macosx-*/_hashlib.so $DYNLOAD_DIR
         cp build/lib.macosx-*/_ssl.so $DYNLOAD_DIR
         cp build/lib.macosx-*/_tkinter.so $DYNLOAD_DIR
-        ls $DYNLOAD_DIR
         popd
     fi
 fi
